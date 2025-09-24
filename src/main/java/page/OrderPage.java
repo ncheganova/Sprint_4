@@ -10,6 +10,19 @@ public class OrderPage {
     private By orderPlaceOrder = By.xpath(".//button[text()='Да']");
     private By orderStatusRes = By.className("Order_ModalHeader__3FDaJ");
 
+    public By authorName = By.xpath(".//input[@placeholder='* Имя']");
+    public By authorSurname = By.xpath(".//input[@placeholder='* Фамилия']");
+    public By authorAdress = By.xpath(".//input[@placeholder='* Адрес: куда привезти заказ']");
+    public By authorMetroInput = By.xpath(".//input[@class='select-search__input']");
+    public By authorMetroDiv = By.xpath(".//div[@class='select-search__select']");
+    public By authorPhone = By.xpath(".//input[@placeholder='* Телефон: на него позвонит курьер']");
+
+    public By rentTime = By.xpath(".//input[@placeholder='* Когда привезти самокат']");
+    public By rentPeriodClick = By.className("Dropdown-placeholder");
+    public String rentPeriodChoose = ".//div[text()='%s']";
+    public By rentColour = By.xpath(".//label[@class='Checkbox_Label__3wxSf']");
+    public By rentComment = By.xpath(".//input[@placeholder='Комментарий для курьера']");
+
     public OrderPage(WebDriver driver) {
         this.driver = driver;
     }
