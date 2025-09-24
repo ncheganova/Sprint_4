@@ -42,8 +42,8 @@ public class OrderTests extends BaseTest{
     @Test
     public void orderScooterTopBtn() {
         mainPage.openPage();
+        mainPage.acceptCookies();
         mainPage.clickOrderScooterTopBtn();
-        orderPage.acceptCookies();
         orderPageSteps.autorization(name, surname, adress, metro, phone);
         orderPage.clickBtnNext();
         orderPageSteps.aboutRent(time, nRentPeriod, nRentColour, comment);
@@ -56,9 +56,9 @@ public class OrderTests extends BaseTest{
     @Test
     public void orderScooterBottomBtn() {
         mainPage.openPage();
+        mainPage.acceptCookies();
         mainPage.scrollToBottomOrderBtn();
         mainPage.clickOrderScooterBottomBtn();
-        orderPage.acceptCookies();
         orderPageSteps.autorization(name, surname, adress, metro, phone);
         orderPage.clickBtnNext();
         orderPageSteps.aboutRent(time, nRentPeriod, nRentColour, comment);

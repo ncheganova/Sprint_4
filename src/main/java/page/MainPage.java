@@ -3,12 +3,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import java.time.Duration;
 
 public class MainPage {
     private WebDriver driver;
-    private WebDriverWait wait;
 
     private static final String URL = "https://qa-scooter.praktikum-services.ru/";
     private static final String IDQUESTION = "accordion__heading-";
@@ -17,11 +14,10 @@ public class MainPage {
     private By listQA = By.xpath(".//div[@class='Home_FAQ__3uVm4']/div");
     private By orderScooterTopBtn = By.className("Button_Button__ra12g");
     private By orderScooterBottomBtn = By.xpath(".//div[@class='Home_FinishButton__1_cWm']/button");
-
+    private By cookiesBtn = By.className("App_CookieButton__3cvqF");
 
     public MainPage(WebDriver driver) {
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     }
 
     public void openPage() {
@@ -38,7 +34,9 @@ public class MainPage {
     public String getAnswer(int n) {return driver.findElement(By.id(IDANSWER+n)).getText();}
     public String getQuestion(int n) {return driver.findElement(By.id(IDQUESTION+n)).getText();}
     public void clickOrderScooterTopBtn() {driver.findElement(orderScooterTopBtn).click();}
-
+    public void acceptCookies() {
+        driver.findElement(cookiesBtn).click();
+    }
     public void scrollToBottomOrderBtn() {
         WebElement element = driver.findElement(orderScooterBottomBtn);
         ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();",
