@@ -30,7 +30,7 @@ public class OrderTests extends BaseTest{
         this.comment = comment;
     }
 
-    @Parameterized.Parameters
+    @Parameterized.Parameters(name = "Тестовые данные: {0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}")
     public static Object[][] getQAListData() {
         return new Object[][] {
                 {"Катерина","Иванова","ул.Заречная", "Бульвар Рокоссовского", "89547639876", "04.10.2025", "сутки", 0, "Курьер молодец!"},
